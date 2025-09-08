@@ -152,6 +152,22 @@ do
     ./case.setup
     ./preview_namelists
 
+    echo +++ COPY SOURCE MODS REQUIRED FOR ASSIMILATION IF ANY  
+    if [[ $ASSIMROOT && -e $ASSIMROOT/SourceMods ]]
+    then
+      for COMPONENT in `ls $ASSIMROOT/SourceMods`
+      do
+        if [ -d $ASSIMROOT/SourceMods/$COMPONENT ]
+        then
+          mkdir -p SourceMods/$COMPONENT
+          for FNAME in `find $ASSIMROOT/SourceMods/$COMPONENT -type f`
+          do
+            cp -vf $FNAME SourceMods/$COMPONENT/
+          done
+        fi
+      done
+    fi
+
     echo +++ BUILD MEMBER 1 CASE 
     ./case.build
 
@@ -222,7 +238,7 @@ do
 done 
 echo + END LOOP OVER MEMBERS 
 
-echo + BUILD ASSIMILATION CODE IF NEEDED
+echo + BUILD SSIMILATION CODE IF NEEDED
 if [[ ! $ASSIMROOT ]]
 then
   echo ASSIMROOT not set, will skip building of assimilation code
