@@ -2,13 +2,13 @@
 # USE VARNAME=VALUE ARGUMENT WHEN CALLING SCRIPT TO OVERRIDE DEFAULTS 
 
 # experiment settings
-: ${EXPERIMENT:=noresm2-mm-seaclim_hindcast} # case prefix, not including _YYYYMMDD_memXX suffix 
+: ${EXPERIMENT:=noresm2-mm-seaclim_hindcast-test} # case prefix, not including _YYYYMMDD_memXX suffix 
 : ${MEMBER1:=1} # first member  
-: ${ENSSIZE:=10} # number of members 
+: ${ENSSIZE:=2} # number of members 
 : ${COMPSET:=NHISTfrc2}
-: ${USER_MODS_DIR:=$SETUPROOT/user_mods/noresm2-mm-seaclim_hindcast_256pes}   
+: ${USER_MODS_DIR:=$SETUPROOT/user_mods/noresm2-mm-seaclim_hindcast_reduced-io_256pes}   
 : ${RES:=f09_tn14}
-: ${START_DATE:=1993-11-01} # YYYY-MM-DD 
+: ${START_DATE:=2013-05-01} # YYYY-MM-DD 
 
 # initialisation settings
 : ${RUN_TYPE:=branch}  
@@ -20,9 +20,9 @@
 
 # job settings
 : ${STOP_OPTION:=nmonths} # units for run length specification STOP_N 
-: ${STOP_N:=64} # run continuesly for this length 
+: ${STOP_N:=6} # run continuesly for this length 
 : ${RESTART:=0} # restart this many times  
-: ${WALLTIME:='72:00:00'}
+: ${WALLTIME:='00:30:00'}
 : ${ACCOUNT:=nn9039k}
 : ${MAX_PARALLEL_STARCHIVE:=10}
 
