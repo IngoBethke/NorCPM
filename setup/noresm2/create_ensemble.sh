@@ -206,8 +206,8 @@ do
     ./case.setup
     ./preview_namelists
 
-    echo +++ DUMMY BUILD
-    ./case.build
+    #echo +++ DUMMY BUILD
+    #./case.build
 
   fi 
   echo ++ FINISHED PREPARING CASE
