@@ -19,7 +19,7 @@ diff -Nur '--exclude=.git' orig/NorESM-release-noresm2.0.9/cime/config/cesm/mach
 +    <!-- default job type, meant for CPU-only jobs needing less than a whole node (< 256 CPUs) -->
 +    <directives queue = "small">
 +      <directive> --partition=small</directive>
-+      <directive> --mem=16G</directive>
++      <directive> --mem-per-cpu=2G</directive>
 +    </directives>
 +    <!-- meant for larger CPU-only jobs, needing at least one node (> 256 CPUs) -->
 +    <directives queue = "large">
@@ -29,11 +29,11 @@ diff -Nur '--exclude=.git' orig/NorESM-release-noresm2.0.9/cime/config/cesm/mach
 +    <directives queue = "devel">
 +      <directive> --partition=small</directive>
 +      <directive> --qos=devel</directive>
-+      <directive> --mem=16G</directive>
++      <directive> --mem-per-cpu=2G</directive>
 +    </directives>
 +      <queues>
 +        <queue walltimemax="144:00:00" nodemin="1" nodemax="1" default="true">small</queue>
-+        <queue walltimemax="144:00:00" nodemin="2" nodemax="1024">large</queue>
++        <queue walltimemax="144:00:00" nodemin="1" nodemax="9">large</queue>
 +        <queue walltimemax="01:59:00"  nodemin="1" nodemax="1" >devel</queue>
 +      </queues>
 +  </batch_system>
