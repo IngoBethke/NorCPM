@@ -19,7 +19,7 @@ diff -Nur '--exclude=.git' orig/NorESM-release-noresm2.0.9/cime/config/cesm/mach
 +    <!-- default job type, meant for CPU-only jobs needing less than a whole node (< 256 CPUs) -->
 +    <directives queue = "small">
 +      <directive> --partition=small</directive>
-+      <directive> --mem={{ mem_per_node }}G</directive>
++      <directive> --mem=16G</directive>
 +    </directives>
 +    <!-- meant for larger CPU-only jobs, needing at least one node (> 256 CPUs) -->
 +    <directives queue = "large">
