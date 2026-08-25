@@ -4,9 +4,9 @@
 if [ -z $MACH ]
 then 
   case "`hostname -d | cut -d. -f1`" in 
-  *fram*) MACH=fram ;; 
+  *fram*)  MACH=fram ;; 
   *betzy*) MACH=betzy ;; 
-  head) MACH=olivia ;; ## somehow hostname of olivia is not following same rule
+  olivia)  MACH=olivia ;;
   *) echo "Could not identify machine."
      echo "please set environmental variable \$MACH or specify script argument MACH=" 
      exit 1 ;;  
